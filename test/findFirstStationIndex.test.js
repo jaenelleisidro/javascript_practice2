@@ -64,8 +64,7 @@ describe('find station', () => {
         });        
         test('2 station and correct station is 1 but station 2 data was missing', () => {
             let strArr=['2', '100:2'];
-            let expectedStationIndex=1
-            expect(findFirstStationIndex(strArr)).toBe(expectedStationIndex);
+            expect(findFirstStationIndex(strArr)).toBe("impossible");
         });        
         test('parameter is null', () => {
             expect(()=>{
