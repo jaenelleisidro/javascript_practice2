@@ -1,0 +1,23 @@
+{
+  "name": "javascript_practice2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaenelleisidro/javascript_practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaenelleisidro/javascript_practice/issues"
+  },
+  "homepage": "https://github.com/jaenelleisidro/javascript_practice#readme",
+  "devDependencies": {
+    "jest": "^29.4.2"
+  }
+}
