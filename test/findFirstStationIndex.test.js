@@ -56,6 +56,25 @@ describe('find station', () => {
             let expectedStationIndex="impossible";
             expect(findFirstStationIndex(strArr)).toBe(expectedStationIndex);
         });
+
+        test('there is only 1 station and correct station is 1', () => {
+            let strArr=['1', '100:2'];
+            let expectedStationIndex=1
+            expect(findFirstStationIndex(strArr)).toBe(expectedStationIndex);
+        });        
+        test('2 station and correct station is 1 but station 2 data was missing', () => {
+            let strArr=['2', '100:2'];
+            let expectedStationIndex=1
+            expect(findFirstStationIndex(strArr)).toBe(expectedStationIndex);
+        });        
+        test('parameter is null', () => {
+            expect(()=>{
+                findFirstStationIndex(null);
+            }).toThrow(Error("parameter must be a string"));
+        });
+        test('parameter is empty array', () => {
+            expect(findFirstStationIndex([])).toBe("impossible");
+        });
     });
 });
   
