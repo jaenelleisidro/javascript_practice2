@@ -7,7 +7,7 @@ module.exports = (strArr)=>{
     let answer=1;
     for (let i = 1; i <= numberOfStation; i++) {
         const station = strArr[i];
-        if(!station){continue;};
+        if(!station){return "impossible";};
         const [gas,gasNeededNext]=station.split(":");
         currentGas=currentGas+gas-gasNeededNext;
         if(currentGas<0){
