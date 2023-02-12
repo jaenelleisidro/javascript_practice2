@@ -5,17 +5,20 @@ module.exports = (strArr)=>{
     let numberOfStation=parseInt(strArr.shift())||0;
     if(numberOfStation>strArr.length){return "impossible";}
 
-    let currentGas=0;
-    
-    let answer=1+strArr.reduce((answer,station,i)=>{
+    strArr=strArr.map((station)=>{
         const [gas,gasNeededNext]=station.split(":");
-        currentGas=currentGas+parseInt(gas)-parseInt(gasNeededNext);
+        return parseInt(gas)-parseInt(gasNeededNext);
+    });
+
+    let currentGas=0;
+    let answer=strArr.reduce((answer,gas)=>{
+        currentGas=currentGas+gas;
         if(currentGas<0){
-            answer=i+1;
+            answer=answer+1;
             currentGas=0;
         }
         return answer;
-    },0);
+    },1);
 
     if(answer>numberOfStation){
         return "impossible";
